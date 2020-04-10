@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Configurações da pagina -->
+    <title> Doe Sangue ! </title>
+    <link rel="icon" href="sa.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Contéudo visivel da pagina -->
+    <header>
+        <img class="logo" src="logo.png" alt="DOE"> 
+        <h2>Salve Vidas !</h2>
+        <p>Você salva até 3 Vidas com apenas uma Doação.</p>
+        <p>Para salvar a vida de muitos, a doação de sangue tem que ser um ato contínuo, que envolva toda a sociedade.</p>
+        <p>O Hemocentro de Picos-PI conta com a sua Doação!
+            Reserve já o seu horário.
+        </p>
+        <button>Quero Ajudar</button>
+    </header>
+
+    <section class="formulario hide">
+        <h2>Entre na Lista de Doadores:</h2>
+        <form action="/" method="POST">
+            <input type="text" name="nome" placeholder="Nome Completo:">
+
+            <input type="text" name="email" placeholder="Email:">
+
+            <input type="text" name="sangue" placeholder="Tipo Sanguíneo:">
+
+            <button>Cadastre-se</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Últimos <span>Doadores</span>:</h2>
+
+        <section class="doadores">
+
+            {%for doador in doadores%}
+            <div class="doador">
+                <div class="sangue">{{doador.tiposangue}}</div>
+                <div class="nome">{{doador.nome}}</div>
+            </div>
+            {%endfor%}
+           
+        </section>
+    </main>
+
+    <footer>By: Carlos Daniel </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
